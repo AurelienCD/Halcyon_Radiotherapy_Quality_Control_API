@@ -8,40 +8,19 @@ import tensorflow as tf
 from tensorflow import keras
 import time
 
-## TO DO #######
-## PCA and TSNE representation ##
-
 
 def main():
-    """ fonction principale de prédiction de conformité des CQ patient """    
+    """ fonction principale de prédiction de conformité des CQ patient Halcyon en IMRT Sein """    
 
     
     
-    st.title('Patient specific quality assurance prediction')
+    st.title('Halcyon IMRT patient specific quality assurance prediction')
     st.write("Please enter the complexity indexes")
     
-    post = st.text_input("(in the same format as the exemple below, with SAS10 MCSv    LT  LTMCS   AAV LSV) : ", "0.723   0.069  30.6298  0.0584  0.094  0.7269")
+    post = st.text_input("(in the same format as the exemple below, with SAS10 BA BM) : ", "0.723 0.069 30.629")
     indices = post
-    label = "Select the tumour location"
-    options = ["All", "Pelvis", "Breast", "H&N", "Brain", "Thorax"]
-    localisation = st.radio(label, options, index=0, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False)
     
-    if localisation == "All":
-        localisation = "Générale"
-    elif localisation == "Breast":
-        localisation = "Sein"
-    elif localisation == "H&N":
-        localisation = "ORL"
-    elif localisation == "Brain":
-        localisation = "Crâne"
-
-    seuil_localisation = {"Crâne": 0.3, "Thorax": 0.3,}
-    
-    if localisation == "Crâne" or localisation == "Thorax":
-        image_ML = Image.open('image_ML_' + str(localisation) +'.png')   
-
-    if localisation == "ORL" or localisation == "Sein" or localisation == "Pelvis" or localisation == "Générale":
-        image_DHL = Image.open('image_DHL_' + str(localisation) +'.png') 
+    image_DL = Image.open('image_DL.png') 
         
         
     try:
@@ -53,10 +32,10 @@ def main():
 
         test = np.array(indices_list)
         indices = test.reshape(1, -1)
-        indices_DHL_all = indices  
+        indices_DL_all = indices  
         
        
-        StandardScaler = load('StandardScaler_' + str(localisation) + '.joblib')
+        StandardScaler = load('StandardScaler.joblib')
         indices = StandardScaler.transform(indices)
         
         indices_finale = []
