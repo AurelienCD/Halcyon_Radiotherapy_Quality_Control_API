@@ -19,7 +19,7 @@ def main():
     post = st.text_input("(in the same format as the exemple below, with SAS10 BA BM) : ", "0.723 0.069 30.629")
     indices = post
     
-    image_DL = Image.open('image_DL.png') 
+    image_DL = Image.open('image_DL_sein.png') 
         
         
     try:
@@ -47,7 +47,8 @@ def main():
             
             # Deep Learning
             proba_tensor=tf.convert_to_tensor(df_ML)
-            y_pred_prob_DHL = DHL_model_all.predict(proba_tensor)
+            DL_model_Sein = load('DL_model_Sein.joblib')
+            y_pred_prob_DHL = DL_model_Sein.predict(proba_tensor)
             result_DL = np.where(y_pred_prob_DHL[:,1]>0.556942, 1,0)
 
             class_25_25 = result_DL[0]
