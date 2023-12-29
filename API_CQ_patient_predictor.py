@@ -19,7 +19,7 @@ def main():
     post = st.text_input("(in the same format as the exemple below, with SAS10 BA BM) : ", "0.723 0.069 30.629")
     indices = post
     
-    image_DL = Image.open('image_DL_sein.png') 
+    image_DL = Image.open('image_DL_Sein.png') 
         
         
     try:
