@@ -51,6 +51,7 @@ def main():
             st.write("ok")
             indices = np.asarray(indices)
             st.write(indices)
+            st.write(indices.shape)
             #proba_tensor=tf.convert_to_tensor(df_ML)
             #st.write(proba_tensor)
             #st.write(proba_tensor.shape)
