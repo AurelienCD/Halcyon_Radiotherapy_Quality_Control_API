@@ -48,6 +48,7 @@ def main():
             df_ML = pad.DataFrame(indices, index = ['1'], columns = ['SAS10', 'BA', 'BI'])
             
             # Deep Learning
+            st.write("ok")
             proba_tensor=tf.convert_to_tensor(df_ML)
             st.write(proba_tensor)
             st.write(proba_tensor.shape)
