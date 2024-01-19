@@ -33,7 +33,8 @@ def main():
         test = np.array(indices_list)
         indices = test.reshape(1, -1)
         #indices_DL_all = indices  
-        print(indices)       
+        print(indices)  
+        st.write(indices)
         StandardScaler = load('StandardScaler_SAS10_BA_BI.joblib')
         indices = StandardScaler.transform(indices)
         
@@ -42,7 +43,7 @@ def main():
             indices_finale.append(float(elm))
 
         print(indices_finale)
-            
+        st.write(indices_finale)    
         
         def deep_learning_classification(indices):
             
