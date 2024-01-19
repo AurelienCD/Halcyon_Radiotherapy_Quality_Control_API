@@ -29,9 +29,9 @@ def main():
         for elm in indices:
             indices_list.append(float(elm))
         st.write(indices_list)
-        indices = np.array(indices_list)
+        test = np.array(indices_list)
         #st.write(test.shape)
-        #indices = test.reshape(1, -1)
+        indices = test.reshape(1, -1)
         st.write(indices.shape)
         #indices_DL_all = indices  
         st.write(indices)
