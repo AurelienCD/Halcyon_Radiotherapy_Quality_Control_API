@@ -43,6 +43,7 @@ def main():
         indices_finale = []
         for elm in indices[0]:
             indices_finale.append(float(elm))
+        indices_finale = np.array(indices_finale)
         st.write(indices_finale)   
         st.write(indices_finale.shape)    
         
