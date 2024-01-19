@@ -39,6 +39,8 @@ def main():
         indices_finale = []
         for elm in indices[0]:
             indices_finale.append(float(elm))
+
+        print(indices_finale)
             
         
         def deep_learning_classification(indices):
