@@ -32,7 +32,7 @@ def main():
         test = np.array(indices_list)
         indices = test.reshape(1, -1)
         #indices_DL_all = indices  
-               
+        print(indices)       
         StandardScaler = load('StandardScaler_SAS10_BA_BI.joblib')
         indices = StandardScaler.transform(indices)
         
