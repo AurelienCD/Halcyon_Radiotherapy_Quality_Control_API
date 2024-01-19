@@ -63,11 +63,12 @@ def main():
             DL_model = load('DL_model_five_classes.joblib')
             y_pred_prob_DL = DL_model.predict(indices)
             st.write(y_pred_prob_DL)
-            result_DL[0] = np.where(y_pred_prob_DL[:,0]>0.535858, 1,0)     #### changer le seuil !!!! et prendre en charge les 5 dimensions
-            result_DL[1] = np.where(y_pred_prob_DL[:,1]>0.535858, 1,0)
-            result_DL[2] = np.where(y_pred_prob_DL[:,2]>0.535858, 1,0)
-            result_DL[3] = np.where(y_pred_prob_DL[:,3]>0.535858, 1,0)
-            result_DL[4] = np.where(y_pred_prob_DL[:,4]>0.535858, 1,0)
+            result_DL = []
+            result_DL.append(np.where(y_pred_prob_DL[:,0]>0.535858, 1,0))     #### changer le seuil !!!! et prendre en charge les 5 dimensions
+            result_DL.append(np.where(y_pred_prob_DL[:,1]>0.535858, 1,0)) 
+            result_DL.append(np.where(y_pred_prob_DL[:,2]>0.535858, 1,0)) 
+            result_DL.append(np.where(y_pred_prob_DL[:,3]>0.535858, 1,0)) 
+            result_DL.append(np.where(y_pred_prob_DL[:,4]>0.535858, 1,0)) 
             st.write(result_DL)
 
 
