@@ -31,7 +31,9 @@ def main():
         print(indices_list)
         st.write(indices_list)
         test = np.array(indices_list)
+        st.write(test.shape)
         indices = test.reshape(1, -1)
+        st.write(indices.shape)
         #indices_DL_all = indices  
         print(indices)  
         st.write(indices)
@@ -57,7 +59,7 @@ def main():
             #st.write(proba_tensor.shape)
             DL_model = load('DL_model_five_classes.joblib')
             y_pred_prob_DL = DL_model.predict(indices)
-            t.write(y_pred_prob_DL)
+            st.write(y_pred_prob_DL)
             result_DL = np.where(y_pred_prob_DL[:,1]>0.556942, 1,0)     #### changer le seuil !!!! et prendre en charge les 5 dimensions
 
             class_25_25 = result_DL[0]
