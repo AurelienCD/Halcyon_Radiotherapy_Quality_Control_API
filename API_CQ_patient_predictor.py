@@ -49,8 +49,11 @@ def main():
             
             # Deep Learning
             proba_tensor=tf.convert_to_tensor(df_ML)
+            st.write(proba_tensor)
+            st.write(proba_tensor.shape)
             DL_model = load('DL_model_five_classes.joblib')
             y_pred_prob_DL = DL_model.predict(proba_tensor)
+            t.write(y_pred_prob_DL)
             result_DL = np.where(y_pred_prob_DL[:,1]>0.556942, 1,0)     #### changer le seuil !!!! et prendre en charge les 5 dimensions
 
             class_25_25 = result_DL[0]
