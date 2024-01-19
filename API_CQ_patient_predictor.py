@@ -28,48 +28,48 @@ def main():
         indices_list = []
         for elm in indices:
             indices_list.append(float(elm))
-        st.write(indices_list)
+        #st.write(indices_list)
         test = np.array(indices_list)
         #st.write(test.shape)
         indices = test.reshape(1, -1)
-        st.write(indices.shape)
+        #st.write(indices.shape)
         #indices_DL_all = indices  
-        st.write(indices)
+        #st.write(indices)
         StandardScaler = load('StandardScaler_SAS10_BA_BI.joblib')
         indices = StandardScaler.transform(indices)
-        st.write(indices)
+       # st.write(indices)
         
         indices_finale = []
         for elm in indices[0]:
             indices_finale.append(float(elm))
         indices_finale = np.array(indices_finale)
-        st.write(indices_finale)   
-        st.write(indices_finale.shape)    
+        #st.write(indices_finale)   
+        #st.write(indices_finale.shape)    
         
         def deep_learning_classification(indices):
             
             #df_ML = pad.DataFrame(indices, index = ['1'], columns = ['SAS10', 'BA', 'BI'])
             
             # Deep Learning
-            st.write("ok")
+            #st.write("ok")
             indices = np.asarray(indices)
             indices = [indices]
-            st.write(indices)
+            #st.write(indices)
             indices = np.asarray(indices)
-            st.write(indices.shape)
+            #st.write(indices.shape)
             #proba_tensor=tf.convert_to_tensor(df_ML)
             #st.write(proba_tensor)
             #st.write(proba_tensor.shape)
             DL_model = load('DL_model_five_classes.joblib')
             y_pred_prob_DL = DL_model.predict(indices)
-            st.write(y_pred_prob_DL)
+            #st.write(y_pred_prob_DL)
             result_DL = []
             result_DL.append(np.where(y_pred_prob_DL[:,0]>0.535858, 1,0))     #### changer le seuil !!!! et prendre en charge les 5 dimensions
             result_DL.append(np.where(y_pred_prob_DL[:,1]>0.535858, 1,0)) 
             result_DL.append(np.where(y_pred_prob_DL[:,2]>0.535858, 1,0)) 
             result_DL.append(np.where(y_pred_prob_DL[:,3]>0.535858, 1,0)) 
             result_DL.append(np.where(y_pred_prob_DL[:,4]>0.535858, 1,0)) 
-            st.write(result_DL)
+            #st.write(result_DL)
 
 
             
