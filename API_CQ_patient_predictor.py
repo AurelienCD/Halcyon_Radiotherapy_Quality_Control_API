@@ -41,14 +41,11 @@ def main():
         indices_finale = []
         for elm in indices[0]:
             indices_finale.append(float(elm))
-
-        print(indices_finale)
-        st.write(indices_finale)
-        st.write(indices_finale.shape)
+            
         
         def deep_learning_classification(indices):
             
-            df_ML = pad.DataFrame(indices_finale, index = ['1'], columns = ['SAS10', 'BA', 'BI'])
+            df_ML = pad.DataFrame(indices, index = ['1'], columns = ['SAS10', 'BA', 'BI'])
             
             # Deep Learning
             proba_tensor=tf.convert_to_tensor(df_ML)
