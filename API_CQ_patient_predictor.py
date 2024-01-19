@@ -16,10 +16,10 @@ def main():
     st.title('Halcyon IMRT patient specific quality assurance prediction')
     st.write("Please enter the complexity indexes")
     
-    post = st.text_input("(in the same format as the exemple below, with SAS10 BA BM) : ", "0.723 0.069 30.629")
+    post = st.text_input("(in the same format as the exemple below, with SAS10 BA BI) : ", "0.723 0.069 30.629")
     indices = post
     
-    image_DL = Image.open('image_DL_Sein.png') 
+    image_DL = Image.open('DL_model_img.png') 
         
         
     try:
@@ -33,7 +33,7 @@ def main():
         indices = test.reshape(1, -1)
         #indices_DL_all = indices  
                
-        StandardScaler = load('StandardScaler.joblib')
+        StandardScaler = load('StandardScaler_SAS10_BA_BI.joblib')
         indices = StandardScaler.transform(indices)
         
         indices_finale = []
@@ -43,13 +43,13 @@ def main():
         
         def deep_learning_classification(indices):
             
-            df_ML = pad.DataFrame(indices_finale, index = ['1'], columns = ['SAS10', 'BA', 'BM'])
+            df_ML = pad.DataFrame(indices_finale, index = ['1'], columns = ['SAS10', 'BA', 'BI'])
             
             # Deep Learning
             proba_tensor=tf.convert_to_tensor(df_ML)
-            DL_model_Sein = load('DL_model_Sein.joblib')
-            y_pred_prob_DHL = DL_model_Sein.predict(proba_tensor)
-            result_DL = np.where(y_pred_prob_DHL[:,1]>0.556942, 1,0)
+            DL_model = load('DL_model_five_classes.joblib')
+            y_pred_prob_DL = DL_model.predict(proba_tensor)
+            result_DL = np.where(y_pred_prob_DL[:,1]>0.556942, 1,0)     #### changer le seuil !!!! et prendre en charge les 5 dimensions
 
             class_25_25 = result_DL[0]
             if class_25_25 == 0:
@@ -135,7 +135,7 @@ def main():
 
           
             st.write("NB : Non-conformance result means a prediction of a  gamma below 95%")                       
-            st.image(image_DL, caption='ROC curve and confusion matrix for the Deep Learning model')
+            st.image(image_DL, caption='Deep Learning model architecture and performances')
 
             
     except Exception as e:
