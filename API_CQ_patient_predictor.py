@@ -28,17 +28,16 @@ def main():
         indices_list = []
         for elm in indices:
             indices_list.append(float(elm))
-        print(indices_list)
         st.write(indices_list)
-        test = np.array(indices_list)
-        st.write(test.shape)
-        indices = test.reshape(1, -1)
+        indices = np.array(indices_list)
+        #st.write(test.shape)
+        #indices = test.reshape(1, -1)
         st.write(indices.shape)
         #indices_DL_all = indices  
-        print(indices)  
         st.write(indices)
         StandardScaler = load('StandardScaler_SAS10_BA_BI.joblib')
         indices = StandardScaler.transform(indices)
+        st.write(indices)
         
         indices_finale = []
         for elm in indices[0]:
