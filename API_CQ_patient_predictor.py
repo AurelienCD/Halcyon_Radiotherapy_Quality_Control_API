@@ -28,7 +28,8 @@ def main():
         indices_list = []
         for elm in indices:
             indices_list.append(float(elm))
-        print(indices_list)  
+        print(indices_list)
+        st.write(indices_list)
         test = np.array(indices_list)
         indices = test.reshape(1, -1)
         #indices_DL_all = indices  
