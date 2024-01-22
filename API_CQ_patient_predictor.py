@@ -75,7 +75,7 @@ def main():
             
             class_25_25 = result_DL[0]
             st.write(class_25_25== 0)
-            if class_25_25 == 0:
+            if class_25_25 == 1:
                 result_class_25_25 = "Conformance QC"
             elif class_25_25 == 0:
                 result_class_25_25 = "Non-conformance QC"
@@ -83,7 +83,7 @@ def main():
                 result_class_25_25 = "Modelisation issue, better call ACD : a.corroyer-dulmont@baclesse.unicancer.fr"
                 
             class_3_3 = result_DL[1]
-            if class_3_3 == 0:
+            if class_3_3 == 1:
                 result_class_3_3 = "Conformance QC"
             elif class_3_3 == 0:
                 result_class_3_3 = "Non-conformance QC"
@@ -91,7 +91,7 @@ def main():
                 result_class_3_3 = "Modelisation issue, better call ACD : a.corroyer-dulmont@baclesse.unicancer.fr"
                 
             class_3_2 = result_DL[2]
-            if class_3_2 == 0:
+            if class_3_2 == 1:
                 result_class_3_2 = "Conformance QC"
             elif class_3_2 == 0:
                 result_class_3_2 = "Non-conformance QC"            
@@ -99,7 +99,7 @@ def main():
                 result_class_3_2 = "Modelisation issue, better call ACD : a.corroyer-dulmont@baclesse.unicancer.fr"
                 
             class_2_3 = result_DL[3]
-            if class_2_3 == 0:
+            if class_2_3 == 1:
                 result_class_2_3 = "Conformance QC"
             elif class_2_3 == 0:
                 result_class_2_3 = "Non-conformance QC"            
@@ -107,7 +107,7 @@ def main():
                 result_class_2_3 = "Modelisation issue, better call ACD : a.corroyer-dulmont@baclesse.unicancer.fr"
                 
             class_2_25 = result_DL[4]
-            if class_2_25 == 0:
+            if class_2_25 == 1:
                 result_class_2_25 = "Conformance QC"
             elif class_2_25 == 0:
                 result_class_2_25 = "Non-conformance QC"
