@@ -74,7 +74,7 @@ def main():
             
             
             class_25_25 = result_DL[0]
-            st.write(class_25_25)
+            st.write(class_25_25== 0)
             if class_25_25 == 0:
                 result_class_25_25 = "Conformance QC"
             elif class_25_25 == 0:
