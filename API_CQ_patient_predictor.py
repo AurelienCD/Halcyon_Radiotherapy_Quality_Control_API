@@ -132,27 +132,27 @@ def main():
             st.write(DL_results)
             if DL_results[1] == "Conformance QC":
                         st.success('Prediction result for QC at 3%/3mm is conformance QC !')
-            elif DL_results[1] == "Non-Conformance QC":
+            elif DL_results[1] == "Non-conformance QC":
                         st.warning('Prediction result for QC at 3%/3mm is Non-conformance QC !')
 
             if DL_results[3] == "Conformance QC":
                         st.success('Prediction result for QC at 2%/3mm is conformance QC !')
-            elif DL_results[3] == "Non-Conformance QC":
+            elif DL_results[3] == "Non-conformance QC":
                         st.warning('Prediction result for QC at 2%/3mm is Non-conformance QC !')
                 
             if DL_results[0] == "Conformance QC":
                         st.success('Prediction result for QC at 2.5%/2.5mm is conformance QC !')
-            elif DL_results[0] == "Non-Conformance QC":
+            elif DL_results[0] == "Non-conformance QC":
                         st.warning('Prediction result for QC at 2.5%/2.5mm is Non-conformance QC !')
 
             if DL_results[2] == "Conformance QC":
                         st.success('Prediction result for QC at 3%/2mm is conformance QC !')
-            elif DL_results[2] == "Non-Conformance QC":
+            elif DL_results[2] == "Non-conformance QC":
                         st.warning('Prediction result for QC at 3%/2mm is Non-conformance QC !')
             
             if DL_results[4] == "Conformance QC":
                         st.success('Prediction result for QC at 2%/2.5mm is conformance QC !')
-            elif DL_results[4] == "Non-Conformance QC":
+            elif DL_results[4] == "Non-conformance QC":
                         st.warning('Prediction result for QC at 2%/2.5mm is Non-conformance QC !')
 
           
