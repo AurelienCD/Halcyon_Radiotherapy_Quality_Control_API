@@ -129,6 +129,7 @@ def main():
             ## deep_hybrid_learning_classification ##
             DL_results = deep_learning_classification(indices_finale)
             st.write('For the Deep Hybrid Learning model : \n')
+            st.write(DL_results)
             if DL_results[1] == "Conformance QC":
                         st.success('Prediction result for QC at 3%/3mm is conformance QC !')
             elif DL_results[1] == "Non-Conformance QC":
