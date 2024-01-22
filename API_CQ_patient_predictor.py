@@ -70,10 +70,11 @@ def main():
             result_DL.append(np.where(y_pred_prob_DL[:,3]>0.535858, 1,0)) 
             result_DL.append(np.where(y_pred_prob_DL[:,4]>0.535858, 1,0)) 
             st.write(result_DL)
-
-
+            st.write(result_DL[0])
+            
             
             class_25_25 = result_DL[0]
+            st.write(class_25_25)
             if class_25_25 == 0:
                 result_class_25_25 = "Conformance QC"
             elif class_25_25 == 0:
