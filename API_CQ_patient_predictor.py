@@ -69,12 +69,9 @@ def main():
             result_DL.append(np.where(y_pred_prob_DL[:,2]>0.535858, 1,0)) 
             result_DL.append(np.where(y_pred_prob_DL[:,3]>0.535858, 1,0)) 
             result_DL.append(np.where(y_pred_prob_DL[:,4]>0.535858, 1,0)) 
-            st.write(result_DL)
-            st.write(result_DL[0])
             
             
             class_25_25 = result_DL[0]
-            st.write(class_25_25== 0)
             if class_25_25 == 1:
                 result_class_25_25 = "Conformance QC"
             elif class_25_25 == 0:
@@ -132,8 +129,6 @@ def main():
             ## deep_hybrid_learning_classification ##
             DL_results = deep_learning_classification(indices_finale)
             st.write('For the Deep Hybrid Learning model : \n')
-            st.write("post fonction")
-            st.write(DL_results)
             if DL_results[1] == "Conformance QC":
                         st.success('Prediction result for QC at 3%/3mm is conformance QC !')
             elif DL_results[1] == "Non-Conformance QC":
