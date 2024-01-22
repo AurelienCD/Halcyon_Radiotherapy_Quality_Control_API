@@ -16,7 +16,7 @@ def main():
     st.title('Halcyon IMRT patient specific quality assurance prediction')
     st.write("Please enter the complexity indexes")
     
-    post = st.text_input("(in the same format as the exemple below, with SAS10 BA BI) : ", "0.723 0.069 30.629")
+    post = st.text_input("(in the same format as the exemple below, with SAS10 BA BI) : ", "0.0768 85.4112 4.8067")
     indices = post
     
     image_DL = Image.open('DL_model_img.png') 
