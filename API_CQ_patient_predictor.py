@@ -129,30 +129,31 @@ def main():
 
 
             ## deep_hybrid_learning_classification ##
+            DL_results = deep_learning_classification(indices_finale)
             st.write('For the Deep Hybrid Learning model : \n') 
-            if deep_learning_classification(indices_finale)[1] == "Conformance QC":
+            if DL_results[1] == "Conformance QC":
                         st.success('Prediction result for QC at 3%/3mm is conformance QC !')
-            elif deep_learning_classification(indices_finale)[1] == "Non-Conformance QC":
+            elif DL_results[1] == "Non-Conformance QC":
                         st.warning('Prediction result for QC at 3%/3mm is Non-conformance QC !')
 
-            if deep_learning_classification(indices_finale)[3] == "Conformance QC":
+            if DL_results[3] == "Conformance QC":
                         st.success('Prediction result for QC at 2%/3mm is conformance QC !')
-            elif deep_learning_classification(indices_finale)[3] == "Non-Conformance QC":
+            elif DL_results[3] == "Non-Conformance QC":
                         st.warning('Prediction result for QC at 2%/3mm is Non-conformance QC !')
                 
-            if deep_learning_classification(indices_finale)[0] == "Conformance QC":
+            if DL_results[0] == "Conformance QC":
                         st.success('Prediction result for QC at 2.5%/2.5mm is conformance QC !')
-            elif deep_learning_classification(indices_finale)[0] == "Non-Conformance QC":
+            elif DL_results[0] == "Non-Conformance QC":
                         st.warning('Prediction result for QC at 2.5%/2.5mm is Non-conformance QC !')
 
-            if deep_learning_classification(indices_finale)[2] == "Conformance QC":
+            if DL_results[2] == "Conformance QC":
                         st.success('Prediction result for QC at 3%/2mm is conformance QC !')
-            elif deep_learning_classification(indices_finale)[2] == "Non-Conformance QC":
+            elif DL_results[2] == "Non-Conformance QC":
                         st.warning('Prediction result for QC at 3%/2mm is Non-conformance QC !')
             
-            if deep_learning_classification(indices_finale)[4] == "Conformance QC":
+            if DL_results[4] == "Conformance QC":
                         st.success('Prediction result for QC at 2%/2.5mm is conformance QC !')
-            elif deep_learning_classification(indices_finale)[4] == "Non-Conformance QC":
+            elif DL_results[4] == "Non-Conformance QC":
                         st.warning('Prediction result for QC at 2%/2.5mm is Non-conformance QC !')
 
           
